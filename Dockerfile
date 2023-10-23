@@ -21,3 +21,6 @@ ADD project1.tar /tmp/myprojects/project1
 RUN useradd $user && echo "$pass" | passwd --stdin "$user"
 USER $user
 RUN whoami > /tmp/username
+USER root
+RUN yum install -y ftp && yum install -y python
+CMD ["python"]
