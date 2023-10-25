@@ -1,0 +1,30 @@
+How to create container using the volume:
+405  docker volume create oracledb
+406  docker volume ls
+407  docker volume inspect oracledb
+408  cd /var/lib/docker/volumes/oracledb/_data
+409  ls
+410  touch AB${a..d}.txt
+411  touch AB$(a..d).txt
+412  touch AB$(1..4).txt
+413  touch ab1.txt
+414  touch ab2.txt
+415  mkdir oracledb
+  416  cd oracledb
+  417  touch ab{1..10}
+  418  ls -ltr
+  419  cd
+  420  pwd
+  421  mkdir dockerhub
+  422  cd dockerhub/
+  423  vi Dockerfile
+  424  docker build -t centos8:1 -f /root/dockerhub/Dockerfile .
+  425  docker image ls
+  426  docker volume ls
+  427  docker container run -it --name oracletest -v oracledb:/data_oracledb centos8:1
+  428  docker volume ls
+  429  docker container ls
+  430  history
+
+Dockerfile has this:
+FROM centos:latest
